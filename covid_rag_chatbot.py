@@ -40,52 +40,75 @@ def create_chain():
 
 # === Apply Custom Styling ===
 st.markdown("""
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 
-    html, body, [class*="css"]  {
-        background-color: #0b0f1a;
-        color: #00ffff;
-        font-family: 'Orbitron', sans-serif;
-    }
+html, body, [class*="css"]  {
+    background-color: #050a1f;
+    color: #00f9ff;
+    font-family: 'Orbitron', sans-serif;
+    scroll-behavior: smooth;
+}
 
-    .block-container {
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 16px;
-        padding: 2rem;
-        box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
-        backdrop-filter: blur(10px);
-    }
+.block-container {
+    background: linear-gradient(135deg, rgba(0,255,255,0.1), rgba(255,0,255,0.05));
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 0 25px rgba(0,255,255,0.4);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(0,255,255,0.2);
+}
 
-    .stChatInputContainer {
-        background: rgba(0, 255, 255, 0.05);
-        border: 1px solid #00ffff;
-        border-radius: 8px;
-        padding: 10px;
-    }
+h1 {
+    text-align: center;
+    color: #00ffe7;
+    text-shadow: 0 0 10px #00f0ff, 0 0 20px #00eaff;
+}
 
-    .stButton > button {
-        background-color: #00ffff;
-        color: #0b0f1a;
-        border-radius: 10px;
-        font-weight: bold;
-    }
+.stChatInputContainer {
+    background: rgba(0, 255, 255, 0.05);
+    border: 1px solid #00ffff;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 0 12px #00ffe7;
+}
 
-    .stChatMessage {
-        border-left: 2px solid #00ffff;
-        padding-left: 1rem;
-        margin-bottom: 1rem;
-        font-size: 1.1rem;
-    }
+.stButton > button {
+    background: linear-gradient(135deg, #00ffff, #0088ff);
+    color: #0b0f1a;
+    border-radius: 12px;
+    font-weight: bold;
+    box-shadow: 0 0 8px #00ffff;
+    transition: 0.3s ease-in-out;
+}
+.stButton > button:hover {
+    box-shadow: 0 0 18px #00ffff;
+    transform: scale(1.05);
+}
 
-    .stChatMessage.user {
-        color: #ff00ff;
-    }
+.stChatMessage {
+    background-color: rgba(0, 255, 255, 0.05);
+    border-left: 3px solid #00ffff;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,255,255,0.2);
+    transition: all 0.3s ease;
+    font-size: 1.05rem;
+}
 
-    .stChatMessage.assistant {
-        color: #00ffff;
-    }
-    </style>
+.stChatMessage.user {
+    color: #ff00ff;
+    border-left: 3px solid #ff00ff;
+    box-shadow: 0 0 15px rgba(255,0,255,0.4);
+}
+
+.stChatMessage.assistant {
+    color: #00ffff;
+    border-left: 3px solid #00ffff;
+    box-shadow: 0 0 15px rgba(0,255,255,0.4);
+}
+</style>
 """, unsafe_allow_html=True)
 
 # === UI ===
