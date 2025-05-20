@@ -43,34 +43,37 @@ st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 
-html, body, [class*="css"]  {
-    background-color: #050a1f;
+html, body, [class*="css"] {
+    background-color: #05070d; /* deep space background */
     color: #00f9ff;
     font-family: 'Orbitron', sans-serif;
     scroll-behavior: smooth;
 }
 
 .block-container {
-    background: linear-gradient(135deg, rgba(0,255,255,0.1), rgba(255,0,255,0.05));
+    background: linear-gradient(135deg, rgba(0,255,255,0.07), rgba(255,0,255,0.04));
     border-radius: 20px;
     padding: 2rem;
     box-shadow: 0 0 25px rgba(0,255,255,0.4);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(0,255,255,0.2);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0,255,255,0.15);
+    animation: glowPulse 3s infinite;
 }
 
 h1 {
     text-align: center;
     color: #00ffe7;
     text-shadow: 0 0 10px #00f0ff, 0 0 20px #00eaff;
+    font-size: 2.5rem;
 }
 
 .stChatInputContainer {
-    background: rgba(0, 255, 255, 0.05);
+    background: rgba(0, 255, 255, 0.08);
     border: 1px solid #00ffff;
     border-radius: 10px;
     padding: 12px;
-    box-shadow: 0 0 12px #00ffe7;
+    box-shadow: 0 0 15px #00ffe7;
+    animation: glowPulse 2s infinite;
 }
 
 .stButton > button {
@@ -78,11 +81,11 @@ h1 {
     color: #0b0f1a;
     border-radius: 12px;
     font-weight: bold;
-    box-shadow: 0 0 8px #00ffff;
+    box-shadow: 0 0 12px #00ffff;
     transition: 0.3s ease-in-out;
 }
 .stButton > button:hover {
-    box-shadow: 0 0 18px #00ffff;
+    box-shadow: 0 0 20px #00ffff;
     transform: scale(1.05);
 }
 
@@ -92,7 +95,7 @@ h1 {
     padding: 1rem;
     margin: 1rem 0;
     border-radius: 12px;
-    box-shadow: 0 0 12px rgba(0,255,255,0.2);
+    box-shadow: 0 0 15px rgba(0,255,255,0.3);
     transition: all 0.3s ease;
     font-size: 1.05rem;
 }
@@ -100,15 +103,23 @@ h1 {
 .stChatMessage.user {
     color: #ff00ff;
     border-left: 3px solid #ff00ff;
-    box-shadow: 0 0 15px rgba(255,0,255,0.4);
+    box-shadow: 0 0 18px rgba(255,0,255,0.4);
 }
 
 .stChatMessage.assistant {
     color: #00ffff;
     border-left: 3px solid #00ffff;
-    box-shadow: 0 0 15px rgba(0,255,255,0.4);
+    box-shadow: 0 0 18px rgba(0,255,255,0.4);
+}
+
+/* Animation for glow effect */
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 5px #00ffff; }
+  50% { box-shadow: 0 0 20px #00ffff; }
+  100% { box-shadow: 0 0 5px #00ffff; }
 }
 </style>
+
 """, unsafe_allow_html=True)
 
 # === UI ===
