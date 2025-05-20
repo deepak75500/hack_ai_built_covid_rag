@@ -123,7 +123,7 @@ h1 {
 """, unsafe_allow_html=True)
 
 # === UI ===
-st.title("🤖         RAG Chatbot")
+st.title("🤖       COVID-RAG Chatbot")
 
 if "qa_chain" not in st.session_state:
     st.session_state.qa_chain, st.session_state.memory = create_chain()
